@@ -17,6 +17,8 @@ import ProductEdit from "../pages/ProductEdit/ProductEdit";
 import Contact from "../pages/Contact/Contact";
 import About from "../pages/About/About";
 
+import NotFound from "../pages/NotFound/NotFound";
+
 const AppRoutes = () => {
   return (
     <BrowserRouter>
@@ -104,6 +106,15 @@ const AppRoutes = () => {
                 <ProductEdit />
               </ProtectedRoute>
             }
+          />
+
+          {/* =========================
+              404 - NOT FOUND
+          ========================= */}
+
+          <Route
+            path="*"
+            element={<NotFound />}
           />
 
         </Routes>
