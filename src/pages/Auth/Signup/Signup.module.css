@@ -1,0 +1,823 @@
+.page {
+  position: relative;
+  min-height: calc(100vh - 76px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  background: #252422;
+
+  padding: 50px 0;
+}
+
+.background {
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at 78% 25%,
+      rgba(235, 94, 40, 0.14),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 18% 78%,
+      rgba(204, 197, 185, 0.12),
+      transparent 28%
+    ),
+    linear-gradient(
+      135deg,
+      #403d39 0%,
+      #252422 52%,
+      #403d39 100%
+    );
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+
+  width: min(92%, 520px);
+
+  margin: 0 auto;
+}
+
+.card {
+  width: 100%;
+
+  padding: 38px;
+
+  background: #fffcf2;
+
+  border: 1px solid
+    rgba(255, 252, 242, 0.18);
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.28);
+}
+
+/* =========================
+   BRAND
+========================= */
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+
+  text-decoration: none;
+
+  font-size: 1rem;
+  font-weight: 800;
+
+  letter-spacing: -0.04em;
+
+  line-height: 1;
+}
+
+.brandPrimary {
+  color: #252422;
+}
+
+.brandAccent {
+  color: #eb5e28;
+}
+
+/* =========================
+   HEADING
+========================= */
+
+.headingBlock {
+  margin-top: 34px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+
+  color: #eb5e28;
+
+  font-size: 0.67rem;
+  font-weight: 800;
+
+  letter-spacing: 0.14em;
+}
+
+.heading {
+  margin: 11px 0 0;
+
+  color: #252422;
+
+  font-size: clamp(2.3rem, 5vw, 3.6rem);
+
+  line-height: 0.95;
+
+  letter-spacing: -0.055em;
+
+  font-weight: 800;
+}
+
+.heading span {
+  color: #eb5e28;
+}
+
+.description {
+  max-width: 430px;
+
+  margin: 18px 0 0;
+
+  color: #403d39;
+
+  font-size: 0.86rem;
+
+  line-height: 1.65;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.form {
+  display: flex;
+  flex-direction: column;
+
+  gap: 16px;
+
+  margin-top: 30px;
+}
+
+.field,
+.otpField {
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+.field label,
+.otpField label {
+  color: #403d39;
+
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.optional {
+  margin-left: 6px;
+
+  color: #8a857d;
+
+  font-size: 0.62rem;
+  font-weight: 500;
+}
+
+.inputWrapper,
+.otpWrapper {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+}
+
+.inputIcon {
+  position: absolute;
+
+  left: 13px;
+
+  width: 16px;
+  height: 16px;
+
+  color: #8a857d;
+
+  pointer-events: none;
+}
+
+.inputWrapper input,
+.otpWrapper input {
+  width: 100%;
+
+  min-height: 44px;
+
+  padding: 0 13px 0 40px;
+
+  border: 1px solid
+    rgba(64, 61, 57, 0.18);
+
+  border-radius: 7px;
+
+  outline: none;
+
+  background: #fff;
+
+  color: #252422;
+
+  font-family: inherit;
+
+  font-size: 0.82rem;
+
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.inputWrapper input::placeholder,
+.otpWrapper input::placeholder {
+  color: #aaa59c;
+}
+
+.inputWrapper input:focus,
+.otpWrapper input:focus {
+  border-color: #eb5e28;
+
+  box-shadow:
+    0 0 0 3px rgba(235, 94, 40, 0.1);
+}
+
+.inputWrapper input:disabled,
+.otpWrapper input:disabled {
+  background: #f2f0ea;
+
+  cursor: not-allowed;
+}
+
+/* =========================
+   OTP
+========================= */
+
+.otpField {
+  margin-top: 4px;
+}
+
+.otpWrapper input {
+  height: 54px;
+
+  text-align: center;
+
+  padding-left: 40px;
+
+  font-size: 1.35rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.35em;
+}
+
+/* =========================
+   MESSAGES
+========================= */
+
+.errorMessage {
+  margin: -3px 0 0;
+
+  color: #c0392b;
+
+  font-size: 0.72rem;
+
+  font-weight: 600;
+
+  line-height: 1.4;
+}
+
+.successMessage {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  margin: -3px 0 0;
+
+  color: #287a45;
+
+  font-size: 0.72rem;
+
+  font-weight: 600;
+
+  line-height: 1.4;
+}
+
+.successMessage svg {
+  width: 14px;
+  height: 14px;
+
+  flex-shrink: 0;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.signupButton {
+  width: 100%;
+
+  min-height: 46px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  margin-top: 2px;
+
+  padding: 0 18px;
+
+  border: 1px solid #eb5e28;
+
+  border-radius: 7px;
+
+  background: #eb5e28;
+
+  color: #fffcf2;
+
+  font-family: inherit;
+
+  font-size: 0.82rem;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+.signupButton svg {
+  width: 15px;
+  height: 15px;
+}
+
+.signupButton:hover:not(:disabled) {
+  background: #252422;
+
+  border-color: #252422;
+
+  transform: translateY(-1px);
+}
+
+.signupButton:disabled {
+  opacity: 0.58;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+.backButton {
+  align-self: center;
+
+  margin-top: 2px;
+
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #403d39;
+
+  font-family: inherit;
+
+  font-size: 0.7rem;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  text-decoration: underline;
+
+  text-underline-offset: 3px;
+}
+
+.backButton:hover {
+  color: #eb5e28;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.loginPrompt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+
+  margin-top: 25px;
+
+  color: #706b64;
+
+  font-size: 0.73rem;
+}
+
+.loginPrompt a {
+  color: #eb5e28;
+
+  text-decoration: none;
+
+  font-weight: 800;
+}
+
+.loginPrompt a:hover {
+  text-decoration: underline;
+
+  text-underline-offset: 3px;
+}
+
+/* =========================
+   1024px
+========================= */
+
+@media (max-width: 1024px) {
+  .page {
+    padding: 42px 0;
+  }
+
+  .card {
+    padding: 34px;
+  }
+}
+
+/* =========================
+   768px
+========================= */
+
+@media (max-width: 768px) {
+  .page {
+    min-height: calc(100vh - 66px);
+
+    padding: 35px 0;
+  }
+
+  .container {
+    width: min(92%, 500px);
+  }
+
+  .card {
+    padding: 30px;
+  }
+
+  .heading {
+    font-size: clamp(
+      2.2rem,
+      7vw,
+      3.2rem
+    );
+  }
+}
+
+/* =========================
+   600px
+========================= */
+
+@media (max-width: 600px) {
+  .page {
+    align-items: flex-start;
+
+    padding: 28px 0 45px;
+  }
+
+  .container {
+    width: 92%;
+  }
+
+  .card {
+    padding: 25px 21px;
+
+    border-radius: 11px;
+  }
+
+  .headingBlock {
+    margin-top: 27px;
+  }
+
+  .heading {
+    font-size: clamp(
+      2rem,
+      9vw,
+      2.8rem
+    );
+  }
+
+  .description {
+    font-size: 0.78rem;
+
+    line-height: 1.6;
+  }
+
+  .form {
+    gap: 13px;
+
+    margin-top: 25px;
+  }
+
+  .passwordRequirements {
+  grid-template-columns: 1fr;
+  gap: 5px;
+}
+
+.passwordRequirements span {
+  font-size: 0.59rem;
+}
+
+.passwordHint {
+  font-size: 0.59rem;
+}
+}
+
+/* =========================
+   480px
+========================= */
+
+@media (max-width: 480px) {
+  .page {
+    padding: 20px 0 35px;
+  }
+
+  .container {
+    width: 92%;
+  }
+
+  .card {
+    padding: 22px 17px;
+
+    border-radius: 9px;
+  }
+
+  .brand {
+    font-size: 0.9rem;
+  }
+
+  .headingBlock {
+    margin-top: 24px;
+  }
+
+  .eyebrow {
+    font-size: 0.59rem;
+  }
+
+  .heading {
+    font-size: 2rem;
+
+    line-height: 0.97;
+  }
+
+  .description {
+    margin-top: 14px;
+
+    font-size: 0.74rem;
+  }
+
+  .form {
+    gap: 12px;
+
+    margin-top: 22px;
+  }
+
+  .field label,
+  .otpField label {
+    font-size: 0.69rem;
+  }
+
+  .inputWrapper input,
+  .otpWrapper input {
+    min-height: 42px;
+
+    font-size: 0.76rem;
+  }
+
+  .otpWrapper input {
+    height: 50px;
+
+    font-size: 1.2rem;
+  }
+
+  .signupButton {
+    min-height: 43px;
+
+    font-size: 0.76rem;
+  }
+
+  .loginPrompt {
+    margin-top: 21px;
+
+    font-size: 0.68rem;
+  }
+
+  .passwordStrength {
+  margin-top: 7px;
+}
+
+.strengthHeader {
+  font-size: 0.6rem;
+}
+
+.strengthLabel {
+  font-size: 0.59rem;
+}
+
+.passwordRequirements span {
+  font-size: 0.57rem;
+}
+
+.passwordRequirements svg {
+  width: 11px;
+  height: 11px;
+}
+}
+
+
+/* =========================
+   PASSWORD STRENGTH
+========================= */
+
+.passwordStrength {
+  margin-top: 9px;
+}
+
+.strengthHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 6px;
+
+  color: #706b64;
+
+  font-size: 0.65rem;
+  font-weight: 700;
+}
+
+.strengthLabel {
+  font-size: 0.64rem;
+  font-weight: 800;
+}
+
+.strengthWeak {
+  color: #c0392b;
+}
+
+.strengthFair {
+  color: #b47718;
+}
+
+.strengthStrong {
+  color: #287a45;
+}
+
+.strengthBar {
+  width: 100%;
+  height: 4px;
+
+  overflow: hidden;
+
+  border-radius: 999px;
+
+  background: #e7e3da;
+}
+
+.strengthProgress {
+  display: block;
+
+  height: 100%;
+
+  border-radius: inherit;
+
+  transition:
+    width 250ms ease,
+    background 250ms ease;
+}
+
+.progressWeak {
+  width: 30%;
+  background: #c0392b;
+}
+
+.progressFair {
+  width: 65%;
+  background: #b47718;
+}
+
+.progressStrong {
+  width: 100%;
+  background: #287a45;
+}
+
+.passwordHint {
+  margin: 7px 0 0;
+
+  color: #8a857d;
+
+  font-size: 0.62rem;
+  line-height: 1.45;
+}
+
+.passwordRequirements {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 6px 10px;
+
+  margin-top: 9px;
+}
+
+.passwordRequirements span {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 5px;
+
+  color: #9a958c;
+
+  font-size: 0.61rem;
+  font-weight: 600;
+
+  transition:
+    color 180ms ease;
+}
+
+.passwordRequirements svg {
+  width: 12px;
+  height: 12px;
+
+  flex-shrink: 0;
+
+  color: #c8c3ba;
+}
+
+.passwordRequirements .requirementPassed {
+  color: #287a45;
+}
+
+.passwordRequirements .requirementPassed svg {
+  color: #287a45;
+}
+
+/* =========================
+   PASSWORD VISIBILITY
+========================= */
+
+.passwordWrapper {
+  position: relative;
+}
+
+.passwordWrapper input {
+  padding-right: 42px;
+}
+
+.passwordToggle {
+  position: absolute;
+
+  right: 11px;
+
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 30px;
+  height: 30px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 0;
+  border-radius: 5px;
+
+  background: transparent;
+
+  color: #8a857d;
+
+  cursor: pointer;
+
+  transition:
+    color 180ms ease,
+    background 180ms ease;
+}
+
+.passwordToggle:hover:not(:disabled) {
+  color: #252422;
+  background: #f2f0ea;
+}
+
+.passwordToggle:focus-visible {
+  outline: 2px solid #eb5e28;
+  outline-offset: 2px;
+}
+
+.passwordToggle:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.passwordToggle svg {
+  width: 16px;
+  height: 16px;
+}

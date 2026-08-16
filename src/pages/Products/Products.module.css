@@ -1,0 +1,687 @@
+.page {
+  min-height: calc(100vh - 76px);
+  padding: 70px 0;
+  background: #f5f3ee;
+}
+
+.container {
+  width: min(90%, 1200px);
+  margin: 0 auto;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  margin-bottom: 45px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+
+  margin-bottom: 12px;
+
+  color: #eb5e28;
+
+  font-size: 0.68rem;
+  font-weight: 800;
+
+  letter-spacing: 0.15em;
+}
+
+.eyebrow::before {
+  content: "";
+
+  width: 22px;
+  height: 2px;
+
+  margin-right: 9px;
+
+  background: #eb5e28;
+}
+
+.heading {
+  margin: 0;
+
+  color: #252422;
+
+  font-size: clamp(
+    2.2rem,
+    5vw,
+    3.5rem
+  );
+
+  line-height: 0.98;
+
+  letter-spacing: -0.055em;
+
+  font-weight: 800;
+}
+
+.heading span {
+  color: #eb5e28;
+}
+
+.description {
+  max-width: 560px;
+
+  margin: 17px 0 0;
+
+  color: #706b64;
+
+  font-size: 0.88rem;
+
+  line-height: 1.65;
+}
+
+/* =========================
+   HEADER ACTIONS
+========================= */
+
+.headerActions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  flex-shrink: 0;
+}
+
+/* =========================
+   ADD PRODUCT BUTTON
+========================= */
+
+.addProductButton {
+  min-height: 42px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  padding: 0 14px;
+
+  border: 1px solid #eb5e28;
+
+  border-radius: 7px;
+
+  background: #eb5e28;
+
+  color: #fffcf2;
+
+  text-decoration: none;
+
+  font-size: 0.76rem;
+
+  font-weight: 800;
+
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+.addProductButton:hover {
+  background: #252422;
+
+  border-color: #252422;
+
+  transform: translateY(-1px);
+}
+
+.addProductButton svg {
+  width: 15px;
+  height: 15px;
+}
+
+/* =========================
+   PRODUCT COUNT
+========================= */
+
+.productCount {
+  flex-shrink: 0;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  min-height: 42px;
+
+  padding: 0 14px;
+
+  border: 1px solid
+    rgba(64, 61, 57, 0.12);
+
+  border-radius: 7px;
+
+  background: #fffcf2;
+
+  color: #403d39;
+
+  font-size: 0.76rem;
+
+  font-weight: 700;
+}
+
+.productCount svg {
+  width: 16px;
+  height: 16px;
+
+  color: #eb5e28;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 24px;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.card {
+  overflow: hidden;
+
+  border: 1px solid
+    rgba(64, 61, 57, 0.1);
+
+  border-radius: 12px;
+
+  background: #fffcf2;
+
+  box-shadow:
+    0 15px 40px
+    rgba(37, 36, 34, 0.06);
+
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 20px 50px
+    rgba(37, 36, 34, 0.11);
+}
+
+/* =========================
+   IMAGE
+========================= */
+
+.imageWrapper {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 16 / 10;
+
+  overflow: hidden;
+
+  background: #ebe8e0;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    transform 300ms ease;
+}
+
+.card:hover .image {
+  transform: scale(1.03);
+}
+
+.imagePlaceholder {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: #8a857d;
+}
+
+.imagePlaceholder svg {
+  width: 32px;
+  height: 32px;
+}
+
+/* =========================
+   DISCOUNT BADGE
+========================= */
+
+.discountBadge {
+  position: absolute;
+
+  top: 13px;
+  left: 13px;
+
+  padding: 6px 8px;
+
+  border-radius: 5px;
+
+  background: #eb5e28;
+
+  color: #fffcf2;
+
+  font-size: 0.62rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.04em;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.content {
+  padding: 22px;
+}
+
+.metaTitle {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #eb5e28;
+
+  font-size: 0.62rem;
+
+  font-weight: 800;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.1em;
+}
+
+.productName {
+  margin: 0;
+
+  color: #252422;
+
+  font-size: 1.25rem;
+
+  line-height: 1.15;
+
+  letter-spacing: -0.025em;
+
+  font-weight: 800;
+}
+
+/*
+   DOMPurify ke baad description
+   plain text preview ke form mein
+   render ho rahi hai.
+*/
+
+.productDescription {
+  display: -webkit-box;
+
+  overflow: hidden;
+
+  margin: 11px 0 18px;
+
+  color: #706b64;
+
+  font-size: 0.76rem;
+
+  line-height: 1.6;
+
+  -webkit-line-clamp: 3;
+
+  -webkit-box-orient: vertical;
+}
+
+/* =========================
+   PRICE
+========================= */
+
+.priceRow {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin-bottom: 18px;
+}
+
+.discountedPrice {
+  color: #252422;
+
+  font-size: 1.1rem;
+
+  font-weight: 800;
+}
+
+.originalPrice {
+  color: #9a958c;
+
+  font-size: 0.76rem;
+
+  text-decoration: line-through;
+}
+
+/* =========================
+   VIEW BUTTON
+========================= */
+
+.viewButton {
+  min-height: 43px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 0 14px;
+
+  border: 1px solid #eb5e28;
+
+  border-radius: 7px;
+
+  background: #eb5e28;
+
+  color: #fffcf2;
+
+  text-decoration: none;
+
+  font-size: 0.76rem;
+
+  font-weight: 800;
+
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+.viewButton:hover {
+  background: #252422;
+
+  border-color: #252422;
+
+  transform: translateY(-1px);
+}
+
+.viewButton svg {
+  width: 15px;
+  height: 15px;
+}
+
+/* =========================
+   STATUS
+========================= */
+
+.status {
+  min-height: 300px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  border: 1px solid
+    rgba(64, 61, 57, 0.1);
+
+  border-radius: 12px;
+
+  background: #fffcf2;
+
+  text-align: center;
+}
+
+.status p {
+  margin: 0;
+
+  color: #706b64;
+
+  font-size: 0.82rem;
+}
+
+.status h2 {
+  margin: 0;
+
+  color: #252422;
+
+  font-size: 1.2rem;
+}
+
+.loader {
+  width: 28px;
+  height: 28px;
+
+  border: 3px solid #ddd9d0;
+
+  border-top-color: #eb5e28;
+
+  border-radius: 50%;
+
+  animation:
+    spin 700ms linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.errorMessage {
+  color: #c0392b !important;
+
+  font-weight: 600;
+}
+
+.emptyIcon {
+  width: 34px;
+  height: 34px;
+
+  color: #8a857d;
+}
+
+/* =========================
+   RETRY BUTTON
+========================= */
+
+.retryButton {
+  min-height: 40px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 0 14px;
+
+  border: 1px solid #eb5e28;
+
+  border-radius: 7px;
+
+  background: #eb5e28;
+
+  color: #fffcf2;
+
+  font-family: inherit;
+
+  font-size: 0.76rem;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 180ms ease,
+    transform 180ms ease;
+}
+
+.retryButton:hover {
+  background: #252422;
+
+  transform: translateY(-1px);
+}
+
+.retryButton svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* =========================
+   1024px
+========================= */
+
+@media (max-width: 1024px) {
+  .page {
+    padding: 55px 0;
+  }
+
+  .grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* =========================
+   768px
+========================= */
+
+@media (max-width: 768px) {
+  .page {
+    padding: 45px 0;
+  }
+
+  .container {
+    width: 90%;
+  }
+
+  .header {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    margin-bottom: 32px;
+  }
+
+  .headerActions {
+    width: 100%;
+
+    justify-content: flex-start;
+  }
+
+  .grid {
+    gap: 18px;
+  }
+
+  .content {
+    padding: 18px;
+  }
+}
+
+/* =========================
+   600px
+========================= */
+
+@media (max-width: 600px) {
+  .page {
+    min-height: calc(100vh - 66px);
+
+    padding: 38px 0;
+  }
+
+  .container {
+    width: 92%;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+
+    gap: 16px;
+  }
+
+  .heading {
+    font-size: 2.35rem;
+  }
+
+  .description {
+    font-size: 0.8rem;
+  }
+
+  .headerActions {
+    width: 100%;
+
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .addProductButton,
+  .productCount {
+    width: 100%;
+  }
+}
+
+/* =========================
+   480px
+========================= */
+
+@media (max-width: 480px) {
+  .page {
+    padding: 30px 0;
+  }
+
+  .heading {
+    font-size: 2rem;
+  }
+
+  .productName {
+    font-size: 1.15rem;
+  }
+
+  .content {
+    padding: 17px;
+  }
+
+  .productDescription {
+    font-size: 0.74rem;
+  }
+}
