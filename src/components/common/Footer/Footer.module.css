@@ -113,7 +113,7 @@
 }
 
 /* =========================
-   LINKS
+   DESKTOP LINKS
 ========================= */
 
 .linksWrapper {
@@ -196,6 +196,14 @@
 
 .contactItem svg {
   margin-top: 2px;
+}
+
+/* =========================
+   MOBILE LINKS
+========================= */
+
+.mobileLinks {
+  display: none;
 }
 
 /* =========================
@@ -291,7 +299,7 @@
   .top {
     grid-template-columns: 1fr;
 
-    gap: 45px;
+    gap: 40px;
   }
 
   .brand {
@@ -303,32 +311,244 @@
   }
 
   .divider {
-    margin-top: 45px;
+    margin-top: 40px;
   }
 }
 
 /* =========================
-   600px
+   MOBILE ACCORDION
 ========================= */
 
 @media (max-width: 600px) {
   .footer {
-    padding: 45px 0 20px;
+    padding: 40px 0 18px;
   }
 
   .container {
     width: 92%;
   }
 
-  .linksWrapper {
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
+  .top {
+    display: flex;
 
-    row-gap: 35px;
+    flex-direction: column;
+
+    gap: 28px;
   }
 
-  .linkColumn:last-child {
-    grid-column: 1 / -1;
+  /* Brand */
+
+  .brand {
+    max-width: 100%;
+  }
+
+  .logo {
+    font-size: 1.3rem;
+  }
+
+  .brandDescription {
+    max-width: 100%;
+
+    margin: 13px 0 17px;
+
+    font-size: 0.72rem;
+
+    line-height: 1.6;
+  }
+
+  .exploreButton {
+    min-height: 38px;
+
+    padding: 0 13px;
+
+    font-size: 0.7rem;
+  }
+
+  /* Hide desktop */
+
+  .linksWrapper {
+    display: none;
+  }
+
+  /* Show mobile */
+
+  .mobileLinks {
+    display: flex;
+
+    flex-direction: column;
+
+    width: 100%;
+
+    border-top: 1px solid
+      rgba(
+        255,
+        252,
+        242,
+        0.1
+      );
+  }
+
+  .mobileSection {
+    width: 100%;
+
+    border-bottom: 1px solid
+      rgba(
+        255,
+        252,
+        242,
+        0.1
+      );
+  }
+
+  /* Accordion button */
+
+  .mobileHeader {
+    width: 100%;
+
+    min-height: 52px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0;
+
+    border: 0;
+
+    background: transparent;
+
+    color: #fffcf2;
+
+    font-family: inherit;
+
+    font-size: 0.68rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+
+    text-align: left;
+
+    cursor: pointer;
+  }
+
+  .mobileHeader svg {
+    width: 15px;
+    height: 15px;
+
+    color: #aaa59d;
+
+    transition:
+      transform 220ms ease,
+      color 180ms ease;
+  }
+
+  .mobileHeaderActive {
+    color: #eb5e28;
+  }
+
+  .mobileHeaderActive svg {
+    color: #eb5e28;
+  }
+
+  .chevronOpen {
+    transform: rotate(180deg);
+  }
+
+  /* Accordion content */
+
+  .mobileContent {
+    max-height: 0;
+
+    overflow: hidden;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0;
+
+    opacity: 0;
+
+    transition:
+      max-height 250ms ease,
+      opacity 200ms ease;
+  }
+
+  .mobileContentOpen {
+    max-height: 220px;
+
+    padding-bottom: 12px;
+
+    opacity: 1;
+  }
+
+  .mobileContent > a {
+    min-height: 38px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: #aaa59d;
+
+    font-size: 0.7rem;
+
+    line-height: 1.5;
+
+    text-decoration: none;
+
+    transition: color 180ms ease;
+  }
+
+  .mobileContent > a:hover {
+    color: #eb5e28;
+  }
+
+  .mobileContent > a svg {
+    width: 14px;
+    height: 14px;
+
+    flex-shrink: 0;
+  }
+
+  .mobileContactItem {
+    min-height: 48px;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 8px;
+
+    padding: 8px 0;
+
+    color: #aaa59d;
+
+    font-size: 0.7rem;
+
+    line-height: 1.5;
+  }
+
+  .mobileContactItem svg {
+    width: 14px;
+    height: 14px;
+
+    flex-shrink: 0;
+
+    margin-top: 2px;
+  }
+
+  /* Bottom */
+
+  .divider {
+    margin: 28px 0 17px;
   }
 
   .bottom {
@@ -336,13 +556,23 @@
 
     flex-direction: column;
 
-    gap: 14px;
+    gap: 9px;
+  }
+
+  .bottom p {
+    font-size: 0.62rem;
+
+    line-height: 1.5;
   }
 
   .bottomLinks {
     flex-wrap: wrap;
 
-    gap: 15px;
+    gap: 14px;
+  }
+
+  .bottomLinks a {
+    font-size: 0.61rem;
   }
 }
 
@@ -351,21 +581,45 @@
 ========================= */
 
 @media (max-width: 480px) {
-  .linksWrapper {
-    grid-template-columns: 1fr;
-
-    gap: 30px;
+  .footer {
+    padding: 34px 0 16px;
   }
 
-  .linkColumn:last-child {
-    grid-column: auto;
+  .container {
+    width: 92%;
+  }
+
+  .top {
+    gap: 24px;
+  }
+
+  .logo {
+    font-size: 1.2rem;
   }
 
   .brandDescription {
-    font-size: 0.75rem;
+    font-size: 0.68rem;
+
+    line-height: 1.55;
+  }
+
+  .mobileHeader {
+    min-height: 49px;
+
+    font-size: 0.65rem;
+  }
+
+  .mobileContent > a {
+    min-height: 35px;
+
+    font-size: 0.67rem;
+  }
+
+  .mobileContactItem {
+    font-size: 0.67rem;
   }
 
   .divider {
-    margin: 38px 0 20px;
+    margin: 24px 0 15px;
   }
 }
